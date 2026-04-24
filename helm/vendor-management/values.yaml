@@ -4,7 +4,7 @@
 frontend:
   replicaCount: 1
   image:
-    repository: govindhan-ravi/vendor-frontend
+    repository: govindhan1234/vendor-frontend
     pullPolicy: Always
     tag: "latest"
   service:
@@ -14,7 +14,7 @@ frontend:
 backend:
   replicaCount: 1
   image:
-    repository: govindhan-ravi/vendor-backend
+    repository: govindhan1234/vendor-backend
     pullPolicy: Always
     tag: "latest"
   service:

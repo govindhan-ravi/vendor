@@ -4,7 +4,7 @@ pipeline {
     environment {
         // --- Configuration Variables ---
         DOCKER_CREDENTIALS_ID = 'dockerhub-creds'
-        DOCKER_REGISTRY       = 'govindhan-ravi'
+        DOCKER_REGISTRY       = 'govindhan1234'
         SONAR_SERVER_NAME     = 'sonar-server'
         EKS_CLUSTER_NAME      = 'vendor-cluster'
         AWS_REGION            = 'us-east-1'
