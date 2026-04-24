@@ -4,7 +4,7 @@
 frontend:
   replicaCount: 1
   image:
-    repository: your-dockerhub-username/vendor-frontend
+    repository: govindhan-ravi/vendor-frontend
     pullPolicy: Always
     tag: "latest"
   service:
@@ -14,7 +14,7 @@ frontend:
 backend:
   replicaCount: 1
   image:
-    repository: your-dockerhub-username/vendor-backend
+    repository: govindhan-ravi/vendor-backend
     pullPolicy: Always
     tag: "latest"
   service:
