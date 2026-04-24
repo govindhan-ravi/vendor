@@ -6,7 +6,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'dockerhub-creds'
         DOCKER_REGISTRY       = 'govindhan1234'
         SONAR_SERVER_NAME     = 'sonar-server'
-        EKS_CLUSTER_NAME      = 'vendor-cluster'
+        EKS_CLUSTER_NAME      = 'accounts-cluster'
         AWS_REGION            = 'us-east-1'
         
         APP_NAME_FRONTEND     = 'vendor-frontend'
