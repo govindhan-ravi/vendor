@@ -57,7 +57,7 @@ pipeline {
                     sonar-scanner \
                       -Dsonar.projectKey=vendor-management-system \
                       -Dsonar.sources=. \
-                      -Dsonar.host.url=http://your-sonarqube-server-ip:9000
+                      -Dsonar.host.url=http://3.85.165.178:9000
                     '''
                 }
             }
