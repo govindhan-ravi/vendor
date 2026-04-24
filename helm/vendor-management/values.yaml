@@ -1,0 +1,33 @@
+# Default values for vendor-management.
+# This is a YAML-formatted file.
+
+frontend:
+  replicaCount: 1
+  image:
+    repository: your-dockerhub-username/vendor-frontend
+    pullPolicy: Always
+    tag: "latest"
+  service:
+    type: LoadBalancer
+    port: 80
+
+backend:
+  replicaCount: 1
+  image:
+    repository: your-dockerhub-username/vendor-backend
+    pullPolicy: Always
+    tag: "latest"
+  service:
+    type: ClusterIP
+    port: 3000
+  env:
+    # URL for MongoDB (updated to point to the db service in the same namespace)
+    URL: "mongodb://vendor-db-service:27017/vendor_db"
+    JWT_SECRET: "your_jwt_secret_here"
+
+mongodb:
+  image:
+    repository: mongo
+    tag: "latest"
+  service:
+    port: 27017

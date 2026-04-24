@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vendor-backend
+  labels:
+    app: vendor-backend
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+  selector:
+    matchLabels:
+      app: vendor-backend
+  template:
+    metadata:
+      labels:
+        app: vendor-backend
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          env:
+            - name: URL
+              value: {{ .Values.backend.env.URL | quote }}
+            - name: JWT_SECRET
+              value: {{ .Values.backend.env.JWT_SECRET | quote }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vendor-backend-service
+spec:
+  type: {{ .Values.backend.service.type }}
+  ports:
+    - port: {{ .Values.backend.service.port }}
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: vendor-backend

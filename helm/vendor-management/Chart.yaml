@@ -1,0 +1,6 @@
+apiVersion: v2
+name: vendor-management
+description: A Helm chart for the Vendor Management System (MERN Stack)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
