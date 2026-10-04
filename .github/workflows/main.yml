@@ -1,14 +1,14 @@
-name: Build and Deploy to EC2
+name: Five Stage Pipeline
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+on: push
 
 jobs:
-  build-and-push:
+  pipeline:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - run: echo "Stage 1: Code Checkout"
+      - run: echo "Stage 2: Install Dependencies"
+      - run: echo "Stage 3: Build Application"
+      - run: echo "Stage 4: Run Tests"
+      - run: echo "Stage 5: Deploy Application"
