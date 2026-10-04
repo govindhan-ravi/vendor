@@ -7,8 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Stage 1: Code Checkout"
-      - run: echo "Stage 2: Install Dependencies"
-      - run: echo "Stage 3: Build Application"
-      - run: echo "Stage 4: Run Tests"
-      - run: echo "Stage 5: Deploy Application"
+      - name: Stage 1
+        run: echo "Code Checkout"
+
+      - name: Stage 2
+        run: echo "Install Dependencies"
+
+      - name: Stage 3
+        run: echo "Build Application"
+
+      - name: Stage 4
+        run: echo "Run Tests"
+
+      - name: Stage 5
+        run: echo "Deploy Application"
